@@ -1,0 +1,49 @@
+---
+title: "craps"
+author: "Grace Pan"
+date: "2/25/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r, echo = FALSE}
+
+
+roll_one_die <- function() {
+  sample (x = 1:6, size = 1)
+}
+
+roll_one_die ()
+
+roll_two_dice <- function() {
+   roll_one_die() + roll_one_die ()
+}
+
+roll_two_dice()
+
+map_int
+
+
+roll_dice <- function () {
+  map_int(1:10, ~ roll_two_dice())
+}
+
+roll_dice()
+
+roll_h_dice <- function () {
+  map_int(1:100, ~ roll_two_dice())
+}
+
+roll_h_dice()
+
+ggplot(roll_h_dice, aes(x= ))
+
+
+```
+
