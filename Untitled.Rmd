@@ -6,13 +6,12 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(ggplot2)
 ```
 
-```{r, echo = FALSE}
+```{r, include= FALSE}
 
 
 roll_one_die <- function() {
@@ -27,23 +26,14 @@ roll_two_dice <- function() {
 
 roll_two_dice()
 
-map_int
+```
 
+```{r, echo = FALSE}
 
-roll_dice <- function () {
-  map_int(1:10, ~ roll_two_dice())
-}
+x <- tibble(results = map_int(1:1000, ~ roll_two_dice()))
 
-roll_dice()
-
-roll_h_dice <- function () {
-  map_int(1:100, ~ roll_two_dice())
-}
-
-roll_h_dice()
-
-ggplot(roll_h_dice, aes(x= ))
-
+x %>%
+ggplot(aes(results)) + geom_histogram(binwidth = .5)
 
 ```
 
